@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+	<head th:replace="~{base :: head}">
+		<meta charset="utf-8">
+		
+		<title>Blog</title>
+	</head>
+	<body>
+		<nav th:replace="~{base :: navbusca}"></nav>
+		<nav th:replace="~{base :: navlinks}"></nav>
+		
+		<main class="container">
+			<nav aria-label="breadcrumb">
+			  <ol class="breadcrumb">
+			    <li class="breadcrumb-item active" aria-current="page">Blogs</li>
+			  </ol>
+			</nav>
+			
+			<div>
+				<div class="row mb-3">
+					<div class="col-sm-8">
+						<div class="card mb-2">
+							<img class="card-img-top" src="/image/circuito-placa.jpg">
+							
+							<div class="card-body">
+							   <h4 class="card-title"><span ></span></h4>
+							  
+							  	<p class="card-text text-muted">
+							  		Autor: <span ></span>
+							  		| Publicado em <span ></span>
+							  	</p>
+							  	
+							    <p class="card-text"><span ></span></p>
+							    
+							    <a href="blogtexto" class="btn btn-primary">Leia mais</a>
+							 </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer></footer>
+	</body>
+</html>

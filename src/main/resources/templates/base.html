@@ -1,0 +1,77 @@
+<head th:fragment="head">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Bootstrap CSS -->
+   		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
+		
+<!-- 		<link rel="stylesheet" type="text/css" href="/css/style.css"> -->
+<!-- 		<link rel="stylesheet" href="/rodape.css"> -->
+		
+		<title>IL-SC</title>
+	
+</head>
+
+<header>
+	<nav th:fragment="navbusca" class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
+			
+		<div class="container-fluid">
+			
+		    <a class="navbar-brand" href="/index">
+		      <img src="/img/ivo.jpg" alt="..." width="50" height="50" class="rounded-circle">
+		      ILSC
+		    </a>
+		    
+		    <span>
+		        <a class="nav-link" href="#"><button type="button" class="btn btn-dark">login</button></a>
+	        </span>
+	    </div>
+	</nav>
+	
+	<nav th:fragment="navlinks" class="navbar navbar-expand-lg navbar-light bg-light p-3 border-top border-bottom border-2 mb-3">
+	
+		<div class="container-fluid">
+				    
+		    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+		    
+		      <ul class="navbar-nav">
+		      
+		        <li class="nav-item">
+		          <a class="nav-link active" aria-current="page" href="/index">Início</a>
+		        </li>
+		        
+		        <li class="nav-item">
+		          <a class="nav-link" href="/bloghome">Blog</a>
+		        </li>
+		        
+		        <div>
+			        <li class="nav-item">
+			          <a class="nav-link" href="/cursos">Cursos</a>
+			        </li>
+		        </div>
+		        
+		        <div>
+			        <li class="nav-item">
+			          <a class="nav-link" href="/contato">Contato</a>
+			        </li>
+		        </div>
+		        
+		        <div>
+					<nav class="nav">
+					  <a class="nav-link" href="/administrativo">Administrativo</a>
+				 	</nav>
+				</div>
+		        
+		      </ul>
+		    </div>
+		  </div>
+	</nav>
+</header>
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+ 

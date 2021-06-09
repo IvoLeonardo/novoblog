@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head th:replace="~{base :: head}">
+		<meta charset="utf-8">
+		<title>Formulário para cadastro de novo autor</title>
+	</head>
+	
+	<body>
+		<header th:replace="~{base :: header}"></header>
+		
+		<div class="container">
+			
+			<div>
+				<form action="salvarAutor" method="post">
+					
+					<div>
+						<label class="form-label" for="autor">Nome</label>
+						<input class="form-control" id="autor" type="text" name="autor">
+					</div>
+					
+					<div class="mt-3">
+						<input class="btn btn-secondary" type="submit" value="Salvar">
+					</div>
+				
+				</form>
+			</div>
+			
+<!-- 			<table> -->
+<!-- 				<tr> -->
+<!-- 					<th>Código</th><th>Autor</th><th>Editar</th><th>Excluir</th> -->
+<!-- 				</tr> -->
+<!-- 				<tr th:each="a : ${autores}"> -->
+<!-- 					<td th:text="${a.id}"></td> -->
+<!-- 					<td th:text="${a.autor}"></td> -->
+<!-- 					<td>editar</td> -->
+<!-- 					<td>excluir</td> -->
+<!-- 				</tr> -->
+<!-- 			</table> -->
+		</div>
+	</body>
+</html>
