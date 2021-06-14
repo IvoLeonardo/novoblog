@@ -13,7 +13,7 @@ public class Autor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String autor;
+	private String nomeAutor;
 
 //	@OneToMany
 //	private List<Blog> blogs = new ArrayList<>();
@@ -26,12 +26,12 @@ public class Autor {
 		this.id = id;
 	}
 
-	public String getAutor() {
-		return autor;
+	public String getNomeAutor() {
+		return nomeAutor;
 	}
 
-	public void setAutor(String autor) {
-		this.autor = autor;
+	public void setNomeAutor(String autor) {
+		this.nomeAutor = autor;
 	}
 
 //	public List<Blog> getBlogs() {

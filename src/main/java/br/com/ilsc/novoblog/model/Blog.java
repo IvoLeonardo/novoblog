@@ -2,17 +2,29 @@ package br.com.ilsc.novoblog.model;
 
 import java.time.LocalDate;
 
-//@Entity
-//@Table(name = "blogs")
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "blogs")
 public class Blog {
 
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String titulo;
-//	@Lob
+	@Lob
 	private String texto;
-	private LocalDate dataPublicacao = LocalDate.now();
+	private LocalDate dataPublicacao;
+
+	@Enumerated(EnumType.STRING)
+	private StatusBlog status;
 
 	public Long getId() {
 		return id;
@@ -44,6 +56,14 @@ public class Blog {
 
 	public void setDataPublicacao(LocalDate dataPublicacao) {
 		this.dataPublicacao = dataPublicacao;
+	}
+
+	public StatusBlog getStatus() {
+		return status;
+	}
+
+	public void setStatus(StatusBlog status) {
+		this.status = status;
 	}
 
 }
