@@ -31,25 +31,28 @@
 			</nav>
 			
 			<article>
-				<div>
+				<div th:object="${blogObj}">
 				
-				<div>
-					<nav class="navbar navbar-light bg-light d-flex justify-content-end">
-						<a href="formNovoBlog"><button type="button" class="btn btn-outline-dark me-3">Editar</button></a>
-					</nav>
-				</div>
-				</span></h1>
+					<div>
+						<nav class="navbar navbar-light bg-light d-flex justify-content-end">
+							<a th:href="@{editarTexto/{idTexto}(idTexto=*{id})}"><button type="button" class="btn btn-outline-dark me-3">Editar</button></a>
+						</nav>
+					</div>
+					
+					<h1 class="card-title"><span th:text="*{titulo}"></span></h1>
 						
 					<p class="card-text text-muted">	
-						<span ></span>
-						<span ></span>
+						<span th:text="'Autor: ' + *{autor}"></span>
+						<span th:text="' | Publicado em ' + *{#temporals.format(dataPublicacao, 'dd/MM/yyyy')}"></span>
 					</p>
 					
-					<section></span></p>
+					<section>
+						<p class="card-text"><span th:utext="*{texto}"></span></p>
 					</section>
 							
 				</div>
 			</article>
 		</main>
+		<footer th:replace="~{base :: rodape}"></footer>
 	</body>
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+	<head th:replace="~{base :: head}">
+		<meta charset="utf-8">
+		<title>Cursos</title>
+	</head>
+	
+	<body>
+		<nav th:replace="~{base :: navbusca}"></nav>
+		<nav th:replace="~{base :: navlinks}"></nav>
+		
+		<div class="container">
+			
+			<div class="row mt-5 mb-3">
+				<div class="col-sm-4">
+					
+						<ul class="list-group mb-2">
+							<li class="list-group-item">Módulo 01- Introdução ao OKR</li>
+							<li class="list-group-item"><a class="" href="#">Aula 01 - O objetivo</a></li>
+							<li class="list-group-item"><a class="" href="#">Aula 02 - Os resultados chave</a></li>
+							<li class="list-group-item"><a class="" href="#">Aula 03 - Indicadores: qual é sua utilidade?</a></li>
+							
+						</ul>
+					
+						
+						<ul class="list-group">
+							<li class="list-group-item">Módulo 02 - Planejamento usando o PDCA</li>
+							<li class="list-group-item"><a class="" href="#">Aula 01 - O resultado que eu desejo alcançar</a></li>
+							<li class="list-group-item"><a class="" href="#">Aula 02 - P (Plan), Planejamento</a></li>
+							<li class="list-group-item"><a class="" href="#">Aula 03 - D (Do), Execução do plano</a></li>
+							<li class="list-group-item"><a class="" href="#">Aula 04 - C (Check), Checar, conferir o resultado</a></li>
+							<li class="list-group-item"><a class="" href="#">Aula 05 - A (Act), Agir corretivamente</a></li>
+							
+						</ul>
+					</div>
+				<div class="ratio ratio-16x9">
+					<iframe src="https://www.youtube.com/embed/pH_HYXGXWBs" width="640" height="360" frameborder="0" 
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+					</iframe>
+				</div>
+			</div>
+		
+		</div>
+		
+		<footer th:replace="~{base :: rodape}"></footer>
+	</body>
+</html>

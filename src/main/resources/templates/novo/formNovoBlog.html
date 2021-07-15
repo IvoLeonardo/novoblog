@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head th:replace="~{base :: head}">
+	<head>
+	
+		<meta charset="utf-8">
+	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
@@ -9,8 +15,6 @@
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
 		
 	
-		<meta charset="utf-8">
-		
 		<title>Formulário novo blog</title>
 	</head>
 	
@@ -29,28 +33,45 @@
 <!-- 		 /bloghome -->
 			<section class="card container col-md-8 mb-3">
 				
-				<form action="/salvarNovoBlog" method="post">
+				<form action="/salvarNovoBlog" method="post" th:object="${blogObj}">
+				
+					<input type="hidden" name="id" th:field="*{id}">
 				
 					<div class="card-body">
 						<div class="form-group">
 							<label class="form-label">Titulo</label>
-							<input class="form-control" name="titulo">
+							<input class="form-control" name="titulo" th:field="*{titulo}">
 						</div>
-<!-- 						<div class="form-group"> -->
-<!-- 							<label class="form-label">Autor</label> -->
-<!-- 							<input class="form-control"> -->
+						
+						<div class="form-group">
+							<label class="form-label">Autor</label>
+							<input class="form-control" name="autor" th:field="*{autor}">
+						</div>
+						
+<!-- 						<div> -->
+<!-- 							<label>Autor</label> -->
+<!-- 							<select id="autor" th:field="*{autor}"> -->
+<!-- 								<option value="" id="autor" selected> --[Selecione]--</option> -->
+<!-- 								<option th:each="a : ${autores}" th:value="${a.id}" th:text="${a.nomeAutor}"></option> -->
+<!-- 							</select> -->
 <!-- 						</div> -->
+						
 						<div class="form-group">
 							<label class="form-label">Conteúdo</label>
-							 <textarea id="summernote" class="form-control" name="texto" placeholder="Texto *"></textarea>
+							 <textarea id="summernote" class="form-control" name="texto" placeholder="Texto *" th:field="*{texto}"></textarea>
 						</div>
 						<div class="row">
 							<input class="btn btn-primary btn-lg col-6 mt-3" type="submit" value="Salvar">
+						</div>
+						<div class="row">
+							<a href="/bloghome" class="btn btn-primary" tabindex="-1" role="button" >Cancelar</a>
+							
 						</div>
 					</div>
 				</form>
 			</section>
 		</main>
+		<footer th:replace="~{base :: rodape}"></footer>
 		
 		<script> 
 		$('#summernote').summernote({ 

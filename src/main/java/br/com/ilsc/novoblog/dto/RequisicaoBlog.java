@@ -10,6 +10,7 @@ public class RequisicaoBlog {
 	private String titulo;
 	private String texto;
 	private String dataPublicacao;
+	private String autor;
 
 	public String getTitulo() {
 		return titulo;
@@ -35,6 +36,14 @@ public class RequisicaoBlog {
 		this.dataPublicacao = dataPublicacao;
 	}
 
+	public String getAutor() {
+		return autor;
+	}
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+
 	public Blog toBlog() {
 
 		Blog blog = new Blog();
@@ -43,8 +52,14 @@ public class RequisicaoBlog {
 		blog.setTexto(texto);
 		blog.setStatus(StatusBlog.RASCUNHO);
 		blog.setDataPublicacao(LocalDate.now());
+		blog.setAutor(autor);
 
 		return blog;
 	}
 
+//	public Blog converter(AutorRepository autorRepository) {
+//
+//		Autor autor = autorRepository.findByNomeAutor(autorNome);
+//		return new Blog(titulo, texto, StatusBlog.RASCUNHO, LocalDate.now(), autor);
+//	}
 }

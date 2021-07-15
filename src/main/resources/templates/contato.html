@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+	<head th:replace="~{base :: head}">
+	
+		<meta charset="utf-8">
+		<title>Contato</title>
+	</head>
+	<body>
+		<nav th:replace="~{base :: navbusca}"></nav>
+		<nav th:replace="~{base :: navlinks}"></nav>
+	
+		<div class="container offset-md-3 mb-3">
+		
+			<div class="card col-8">
+				<div class="card-body">
+					<form action="/salvaContato" method="post" th:object="${contatoObj}">
+					  <div class="form-group">
+					    <label for="nome">Nome</label>
+					    <input class="form-control" id="nome" aria-describedby="emailHelp" name="nome" placeholder="Informe seu nome">
+					  </div>
+					  
+					  <div class="form-group">
+					    <label for="email">Email</label>
+					    <input type="email" class="form-control" id="email" name="email" placeholder="Informe seu email principal">
+					  </div>
+					  <div class="form-group">
+					    <label for="whatsapp">Whatsapp</label>
+					    <input class="form-control" id="whatsapp" name="whatsApp" placeholder="Número do seu Whatsapp">
+					  </div>
+					  
+					  <button type="submit" class="btn btn-primary btn-lg">Confirmar inscrição</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<footer th:replace="~{base :: rodape}"></footer>
+	</body>
+</html>

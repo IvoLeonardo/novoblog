@@ -16,29 +16,76 @@
 			  </ol>
 			</nav>
 			
-			<div>
+<!-- 			<div th:each="b : ${blogs}"> -->
+<!-- 				<div class="row mb-3"> -->
+<!-- 					<div class="col-sm-8"> -->
+<!-- 						<div class="card mb-2"> -->
+<!-- 							<img class="card-img-top" src="/image/circuito-placa.jpg"> -->
+							
+<!-- 							<div class="card-body"> -->
+<!-- 							   <h4 class="card-title"><span th:text="${b.titulo}"></span></h4> -->
+							  
+<!-- 							  	<p class="card-text text-muted"> -->
+<!-- 							  		Autor: <span th:text="${b.autor}"></span> -->
+<!-- 							  		| Publicado em <span th:text="${#temporals.format(b.dataPublicacao, 'dd/MM/yyyy')}"></span> -->
+<!-- 							  	</p> -->
+							  	
+<!-- 							    <p class="card-text"><span ></span></p> -->
+							    
+<!-- 							    <a th:href="${blogtexto}" class="btn btn-primary">Leia mais</a> -->
+<!-- 							 </div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+			
+			<div th:each="b : ${blogs.content}">
 				<div class="row mb-3">
 					<div class="col-sm-8">
 						<div class="card mb-2">
 							<img class="card-img-top" src="/image/circuito-placa.jpg">
 							
 							<div class="card-body">
-							   <h4 class="card-title"><span ></span></h4>
+							   <h4 class="card-title"><span th:text="${b.titulo}"></span></h4>
 							  
 							  	<p class="card-text text-muted">
-							  		Autor: <span ></span>
-							  		| Publicado em <span ></span>
+							  		Autor: <span th:text="${b.autor}"></span>
+							  		| Publicado em <span th:text="${#temporals.format(b.dataPublicacao, 'dd/MM/yyyy')}"></span>
 							  	</p>
 							  	
-							    <p class="card-text"><span ></span></p>
+							    <p class="card-text"><span th:utext="${#strings.abbreviate(b.texto,400)}"></span></p>
 							    
-							    <a href="blogtexto" class="btn btn-primary">Leia mais</a>
+							    <a th:href="@{textoDoBlog/{idTextoBlog}(idTextoBlog=${b.id})}" class="btn btn-primary">Leia mais</a>
 							 </div>
 						</div>
 					</div>
 				</div>
 			</div>
+			
+			<nav>
+				<div>
+					<ul class="pagination justify-content-center">
+						<li class="page-item" th:if="${blogs.hasPrevious()}">
+					      <a class="page-link" href="#" aria-label="Previous"
+					      		th:href="@{/blogspag(page=${blogs.number-1}, size=${blogs.size})}">
+					        <span aria-hidden="true">&laquo;</span>
+					      </a>
+					    </li>
+					    
+						<th:block class="page-item" th:each="i: ${#numbers.sequence(0, blogs.totalPages -1 )}">
+							<a class="page-link" th:href="@{/blogspag(page=${i}, sizel=${blogs.size})}">[[ ${i} +1]]</a>
+						</th:block>
+						
+						<li class="page-item" th:if="${blogs.hasNext()}">
+					      <a class="page-link" href="#" aria-label="Next"
+					      		th:href="@{/blogspag(page=${blogs.number+1}, size=${blogs.size})}">
+					        <span aria-hidden="true">&raquo;</span>
+					      </a>
+					    </li>
+					</ul>
+				</div>
+			</nav>
 		</main>
-		<footer></footer>
+		<footer th:replace="~{base :: rodape}"></footer>
 	</body>
 </html>

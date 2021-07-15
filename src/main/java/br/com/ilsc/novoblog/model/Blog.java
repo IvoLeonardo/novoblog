@@ -21,10 +21,23 @@ public class Blog {
 	private String titulo;
 	@Lob
 	private String texto;
-	private LocalDate dataPublicacao;
+	private LocalDate dataPublicacao = LocalDate.now();
+	public String autor;
 
 	@Enumerated(EnumType.STRING)
 	private StatusBlog status;
+
+	public Blog(String titulo, String texto, StatusBlog status, LocalDate dataPublicacao, String autor) {
+		this.titulo = titulo;
+		this.texto = texto;
+		this.status = status;
+		this.dataPublicacao = dataPublicacao;
+		this.autor = autor;
+	}
+
+	public Blog() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Long getId() {
 		return id;
@@ -66,4 +79,11 @@ public class Blog {
 		this.status = status;
 	}
 
+	public String getAutor() {
+		return autor;
+	}
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
 }

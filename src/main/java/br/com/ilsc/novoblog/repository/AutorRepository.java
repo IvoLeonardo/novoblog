@@ -8,4 +8,5 @@ import br.com.ilsc.novoblog.model.Autor;
 @Repository
 public interface AutorRepository extends JpaRepository<Autor, Long> {
 
+	public Autor findByNomeAutor(String nome);
 }
